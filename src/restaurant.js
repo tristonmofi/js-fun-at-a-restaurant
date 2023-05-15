@@ -15,7 +15,13 @@ function addMenuItem(pizzaRestaurant, food) {
     }
   }
 
-
+function removeMenuItem(pizzaRestaurant, food) {
+  for (var i = 0; i < pizzaRestaurant.length; i++) {
+    if (pizzaRestaurant[i].menus[food.type].includes(food) === true) {
+      pizzaRestaurant.menus[food.type].splice(i, 1)
+    }
+  } return `No one is eating our ${food} - it has been removed from the breakfast menu!`
+}
 
 
 
@@ -28,6 +34,6 @@ function addMenuItem(pizzaRestaurant, food) {
 module.exports = {
 createRestaurant, 
 addMenuItem,
-  // removeMenuItem,
+removeMenuItem,
   // checkForFood
 }
